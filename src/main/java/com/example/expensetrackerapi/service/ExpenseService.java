@@ -1,6 +1,6 @@
-package com.example.ExpanseTrackerAPI.service;
+package com.example.expensetrackerapi.service;
 
-import com.example.ExpanseTrackerAPI.entity.Expense;
+import com.example.expensetrackerapi.entity.Expense;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 

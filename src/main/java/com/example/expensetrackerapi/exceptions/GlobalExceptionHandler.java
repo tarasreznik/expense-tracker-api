@@ -1,6 +1,6 @@
-package com.example.ExpanseTrackerAPI.exceptions;
+package com.example.expensetrackerapi.exceptions;
 
-import com.example.ExpanseTrackerAPI.entity.ErrorObject;
+import com.example.expensetrackerapi.entity.ErrorObject;
 import org.springframework.context.support.DefaultMessageSourceResolvable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;

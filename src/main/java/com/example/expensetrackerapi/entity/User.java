@@ -1,4 +1,4 @@
-package com.example.ExpanseTrackerAPI.entity;
+package com.example.expensetrackerapi.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;

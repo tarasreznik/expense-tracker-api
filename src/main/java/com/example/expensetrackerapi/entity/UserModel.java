@@ -1,4 +1,4 @@
-package com.example.ExpanseTrackerAPI.entity;
+package com.example.expensetrackerapi.entity;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

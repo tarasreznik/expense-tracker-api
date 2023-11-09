@@ -1,6 +1,6 @@
-package com.example.ExpanseTrackerAPI.config;
+package com.example.expensetrackerapi.config;
 
-import com.example.ExpanseTrackerAPI.security.CustomUserDetailsService;
+import com.example.expensetrackerapi.security.CustomUserDetailsService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;

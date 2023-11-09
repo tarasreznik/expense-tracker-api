@@ -1,4 +1,4 @@
-package com.example.ExpanseTrackerAPI.exceptions;
+package com.example.expensetrackerapi.exceptions;
 
 import java.io.Serial;
 

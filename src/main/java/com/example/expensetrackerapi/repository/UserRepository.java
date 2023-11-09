@@ -1,6 +1,6 @@
-package com.example.ExpanseTrackerAPI.repository;
+package com.example.expensetrackerapi.repository;
 
-import com.example.ExpanseTrackerAPI.entity.User;
+import com.example.expensetrackerapi.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
