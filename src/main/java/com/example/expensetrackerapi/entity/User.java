@@ -3,24 +3,32 @@ package com.example.expensetrackerapi.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import java.sql.Timestamp;
+import java.util.Collection;
+import java.util.List;
 
-@Entity
-@Table(name = "tbl_users")
+@Builder
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+@Entity
+@Table(name = "tbl_users")
+public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    private String name;
+    private String firstName;
+
+    private String lastName;
 
     @Column(unique = true)
     String email;
@@ -28,13 +36,45 @@ public class User {
     @JsonIgnore
     String password;
 
-    private Long age;
+    @Enumerated(EnumType.STRING)
+    private Role role;
+
+    private String accessToken;
+
+    private String refreshToken;
 
     @Column(name = "created_at", nullable = false, updatable = false)
-    @CreationTimestamp
+    @Temporal(TemporalType.TIMESTAMP)
+    @CreatedDate
     private Timestamp createdAt;
 
-    @Column(name = "updated_at")
-    @UpdateTimestamp
-    private Timestamp updatedAt;
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return List.of(new SimpleGrantedAuthority(role.name()));
+    }
+
+    @Override
+    public String getUsername() {
+        return email;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
+    }
 }

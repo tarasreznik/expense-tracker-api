@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.sql.Date;
 import java.util.List;
 
+@RequestMapping("/api/v1")
 @RestController
 public class ExpenseController {
     private final ExpenseService expenseService;

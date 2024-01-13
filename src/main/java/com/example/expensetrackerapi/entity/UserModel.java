@@ -8,8 +8,11 @@ import lombok.Data;
 
 @Data
 public class UserModel {
-    @NotBlank(message = "name should not be empty")
-    private String name;
+    @NotBlank(message = "First name should not be empty")
+    private String firstName;
+
+    @NotBlank(message = "Last name should not be empty")
+    private String lastName;
 
     @NotNull(message = "Email should not be empty")
     @Email(message = "Enter a valid email")
